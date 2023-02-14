@@ -6,7 +6,7 @@
 #    By: cter-maa <cter-maa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 11:17:42 by cter-maa      #+#    #+#                  #
-#    Updated: 2023/02/03 11:25:31 by cter-maa      ########   odam.nl          #
+#    Updated: 2023/02/14 11:58:56 by cter-maa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,18 +82,18 @@ comp: all bonus clean
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
-	@echo "$(GREEN) ft_libft compiled $(DEF_COLOR)"
+	@echo "$(GREEN) libft compiled $(DEF_COLOR)"
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
-	@echo "$(YELLOW) ft_libft object files cleaned $(DEF_COLOR)"
+	@echo "$(YELLOW) libft object files cleaned $(DEF_COLOR)"
 
 fclean: clean
 	$(RM) $(NAME)
-	@echo "$(YELLOW) ft_printf object files & folders are cleaned $(DEF_COLOR)"
+	@echo "$(YELLOW) libft object files & folders are cleaned $(DEF_COLOR)"
 
 re: fclean $(NAME)
 
 bonus: $(OBJ_BONUS)
 	$(AR) $(NAME) $(OBJ_BONUS)
-	@echo "$(GREEN) ft_libft_bonus compiled $(DEF_COLOR)"
+	@echo "$(GREEN) libft_bonus compiled $(DEF_COLOR)"

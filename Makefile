@@ -6,34 +6,30 @@
 #    By: chaverttermaat <chaverttermaat@student.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/07 10:49:31 by chavertterm   #+#    #+#                  #
-#    Updated: 2023/02/13 16:53:10 by cter-maa      ########   odam.nl          #
+#    Updated: 2023/02/14 17:17:10 by cter-maa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # VARIABLES
 NAME 	= push_swap
 CC 		= gcc
-CFLAGS 	= -Wall -Wextra -Werror
+CFLAGS 	= -Wall -Wextra -Werror -g
 RM 		= rm -f
-AR 		= ar -crs
 
 # INCLUDES
-INCLUDES	= -I ./libft -I ./printf 
+INCLUDES	= -I ./libft -I ./ft_printf 
 
 # LIBS
 LIBFT = ./libft/libft.a
-PRINTF = ./printf/libftprintf.a
+PRINTF = ./ft_printf/libftprintf.a
 
 # SOURCES
 SRC =	utilities.c \
 		validations.c \
-
-#SOURCES BONUS
-#BONUS		=	
+		main.c
 
 # OBJECTS
 OBJ			= $(SRC:.c=.o)
-#OBJ_BONUS	= $(BONUS:.c=.o)
 
 # COLORS
 DEF_COLOR 	= \033[0;39m
@@ -49,24 +45,18 @@ WHITE 		= \033[0;97m
 # RULES
 all: $(NAME)
 
-comp: all clean #bonus
-
+comp: all clean
+	 
 $(NAME): $(OBJ)
-	$(MAKE) -C ./libft
-	$(MAKE) -C ./printf
-	$(CC) $(CFLAGS) $(INCLUDES) $(LIBFT) $(PRINTF) -o $(NAME) 
+	$(CC) $(OBJ) $(INCLUDES) $(LIBFT) $(PRINTF) -o $(NAME) 
 	@echo "$(GREEN) push_swap compiled $(DEF_COLOR)"
-
+	 
 clean:
-	$(RM) $(OBJ) $(OBJ_BONUS)
+	$(RM) $(OBJ)
 	@echo "$(YELLOW) push_swap object files cleaned $(DEF_COLOR)"
 
 fclean: clean
 	$(RM) $(NAME)
 	@echo "$(YELLOW) push_swap object files & folders are cleaned $(DEF_COLOR)"
 
-re: fclean $(NAME)
-
-# bonus: $(OBJ_BONUS)
-#	$(AR) $(NAME) $(OBJ_BONUS)
-#	@echo "$(GREEN) push_swap_bonus compiled $(DEF_COLOR)" 
+re: fclean comp

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   check_errors.c                                     :+:    :+:            */
+/*   validations.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 14:47:58 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/09 12:50:03 by chavertterm   ########   odam.nl         */
+/*   Updated: 2023/02/14 15:38:08 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,40 @@ void	sign_check(char **argv)
 				index2++;
 			else
 			{
-				printf("program failed");
+				printf("bad input");
 				exit(EXIT_FAILURE);
 			}
 		}
 		index2 = 0;
-		if ((argv[index1][index2] == '-') && (argv[index1][index2 + 1] == '-'))
+		if ((argv[index1][index2] == '-') && (string_search(argv[index1]) == 1))
 		{
-			printf("program failed");
+			printf("bad input");
 			exit(EXIT_FAILURE);
 		}
 		index1++;
 	}
 }
 
+int	string_search(char *string)
+{
+	int	index;
+
+	index = 1;
+	while (string[index] != '-')
+	{
+		if (string[index] == '\0')
+			return (0);
+		index++;
+	}	
+	return (1);
+}
+
+
 void	lenght_check(long long int number)
 {
 	if (number > INT_MAX || number < INT_MIN)
 	{
-		printf("program failed");
+		printf("bad input");
 		exit(EXIT_FAILURE);
 	}
 }
@@ -64,7 +79,7 @@ void	check_double(char **argv)
 		{
 			if (ps_atoll(argv[index_argv]) == ps_atoll(argv[index_argv2]))
 				{
-					printf("program failed");
+					printf("bad input");
 					exit(EXIT_FAILURE);
 				}
 			index_argv2++;
