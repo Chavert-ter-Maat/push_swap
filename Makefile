@@ -6,7 +6,7 @@
 #    By: chaverttermaat <chaverttermaat@student.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/07 10:49:31 by chavertterm   #+#    #+#                  #
-#    Updated: 2023/02/14 17:17:10 by cter-maa      ########   odam.nl          #
+#    Updated: 2023/02/15 12:06:51 by cter-maa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,9 @@ CFLAGS 	= -Wall -Wextra -Werror -g
 RM 		= rm -f
 
 # INCLUDES
-INCLUDES	= -I ./libft -I ./ft_printf 
+INCLUDES	= -I ./ft_printf 
 
 # LIBS
-LIBFT = ./libft/libft.a
 PRINTF = ./ft_printf/libftprintf.a
 
 # SOURCES
@@ -44,11 +43,9 @@ WHITE 		= \033[0;97m
 
 # RULES
 all: $(NAME)
-
-comp: all clean
 	 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(INCLUDES) $(LIBFT) $(PRINTF) -o $(NAME) 
+	$(CC) $(OBJ) $(INCLUDES) $(PRINTF) -o $(NAME) 
 	@echo "$(GREEN) push_swap compiled $(DEF_COLOR)"
 	 
 clean:
@@ -57,6 +54,9 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	@echo "$(YELLOW) push_swap object files & folders are cleaned $(DEF_COLOR)"
+	@echo "$(YELLOW) push_swap object files & executable cleaned $(DEF_COLOR)"
 
-re: fclean comp
+re: fclean all
+	$(RM) $(OBJ)
+
+

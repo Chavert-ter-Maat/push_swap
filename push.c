@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlen.c                                        :+:    :+:            */
+/*   push.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/08 13:25:48 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/01/13 10:32:42 by cter-maa      ########   odam.nl         */
+/*   Created: 2023/02/15 12:59:57 by cter-maa      #+#    #+#                 */
+/*   Updated: 2023/02/15 13:12:25 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ************************************************************************** */
-/* ft_strlen() function computes the length of the string s.				  */
-/* ************************************************************************** */
+#include "push_swap.h"
 
-#include "libft.h"
+// pa (push a): Take the first element at the top of b and put it at the top of a.
+// Do nothing if b is empty.
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	lenght;
-	char	*string;
-
-	lenght = 0;
-	string = (char *)s;
-	while (string[lenght])
-		lenght++;
-	return (lenght);
-}
+// pb (push b): Take the first element at the top of a and put it at the top of b.
+// Do nothing if a is empty.

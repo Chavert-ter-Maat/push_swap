@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 14:48:51 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/14 18:27:58 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/15 14:38:49 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,20 @@ long long int	ps_atoll(const char *argv)
 	return (sign * result);
 }
 
-// new_list function works
-
-ps_list	*new_node(long long number)
+t_node	*new_node(long long number)
 {
-	ps_list	*new_node;
+	t_node	*new_node;
 
-	if (!(new_node = malloc(sizeof(ps_list))))
+	if (!(new_node = malloc(sizeof(t_node))))
 		return (NULL);
 	new_node->number = number;
 	new_node->next = NULL;
 	return (new_node);
 }
 
-void	add_node_back(ps_list **node_pointer, ps_list *new_node)
+void	add_node_back(t_node **node_pointer, t_node *new_node)
 {
-	ps_list	*last_node;
+	t_node	*last_node;
 	
 	if(!*node_pointer)
 	{
@@ -64,7 +62,7 @@ void	add_node_back(ps_list **node_pointer, ps_list *new_node)
 	last_node->next = new_node;
 }
 
-ps_list	*search_last_node(ps_list *list)
+t_node	*search_last_node(t_node *list)
 {
 	if (!list)
 		return (NULL);

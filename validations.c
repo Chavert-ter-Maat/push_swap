@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 14:47:58 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/14 15:38:08 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/15 11:55:19 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	sign_check(char **argv)
 				index2++;
 			else
 			{
-				printf("bad input");
+				printf("Error\n");
 				exit(EXIT_FAILURE);
 			}
 		}
 		index2 = 0;
 		if ((argv[index1][index2] == '-') && (string_search(argv[index1]) == 1))
 		{
-			printf("bad input");
+			printf("Error\n");
 			exit(EXIT_FAILURE);
 		}
 		index1++;
@@ -56,12 +56,11 @@ int	string_search(char *string)
 	return (1);
 }
 
-
 void	lenght_check(long long int number)
 {
 	if (number > INT_MAX || number < INT_MIN)
 	{
-		printf("bad input");
+		printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
 }
@@ -79,7 +78,7 @@ void	check_double(char **argv)
 		{
 			if (ps_atoll(argv[index_argv]) == ps_atoll(argv[index_argv2]))
 				{
-					printf("bad input");
+					printf("Error\n");
 					exit(EXIT_FAILURE);
 				}
 			index_argv2++;

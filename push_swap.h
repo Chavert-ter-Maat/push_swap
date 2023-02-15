@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 10:58:22 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/14 18:19:18 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/15 14:38:08 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,31 @@
 #include <stdint.h>
 #include <limits.h>
 #include "./ft_printf/ft_printf.h"
-#include "./libft/libft.h"
 
-typedef struct a_list
+typedef struct ps_list
 {
 	long long		number;
-	struct a_list	*next;
-}					ps_list;
+	struct ps_list	*next;
+}					t_node;
 
-/* Validation functions */
-void	sign_check(char **argv);
-void	lenght_check(long long int number);
-void	check_double(char **argv);
+typedef struct	s_data
+{
+	int		argc;
+	char	argv;
+	int		size;
+	t_node	*head;
+}			t_data;
+
+/* Error handling */
+void		sign_check(char **argv);
+void		lenght_check(long long int number);
+void		check_double(char **argv);
 
 /* Utility functions */
 long long	ps_atoll(const char *argv);
-int	string_search(char *string);
-ps_list	*new_node(long long number);
-void	add_node_back(ps_list **list, ps_list *new_list);
-ps_list	*search_last_node(ps_list *list);
+int			string_search(char *string);
+t_node		*new_node(long long number);
+void		add_node_back(t_node **node_pointer, t_node *new_node);
+t_node		*search_last_node(t_node *list);
 
 #endif
