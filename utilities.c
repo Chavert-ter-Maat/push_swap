@@ -3,70 +3,39 @@
 /*                                                        ::::::::            */
 /*   utilities.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
+/*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/08 14:48:51 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/15 14:38:49 by cter-maa      ########   odam.nl         */
+/*   Created: 2023/02/16 10:54:42 by cter-maa      #+#    #+#                 */
+/*   Updated: 2023/02/16 16:06:19 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long long int	ps_atoll(const char *argv)
+void	print_stack(t_node *head_stack, char stack_a_b)
 {
-	int				index;
-	long long int	result;
-	int				sign;
-
-	index = 0;
-	sign = 1;
-	result = 0;
-	while ((argv[index] >= 9 && argv[index] <= 13) || (argv[index] == 32))
-		index++;
-	if (argv[index] == '-')
+	if (stack_a_b == 'a')
+		ft_printf("------------ stack a ------------\n");
+	else
+		ft_printf("------------ stack b ------------\n");
+	while (head_stack)
 	{
-		if (argv[index] == '-')
-			(sign *= -1);
-		index++;
+		printf("(index = %i) ",head_stack->index);
+		printf("(%lli = number)\n",head_stack->number);
+		head_stack = head_stack->next;
 	}
-	while ((argv[index] >= '0' && argv[index] <= '9') && argv[index])
-	{
-		result = result * 10 + (argv[index] - '0');
-		index++;
-	}
-	lenght_check(sign * result);
-	return (sign * result);
+	ft_printf("---------------------------------\n\n");
 }
 
-t_node	*new_node(long long number)
+int	stack_size(t_node *head_stack)
 {
-	t_node	*new_node;
+	int		amount;
 
-	if (!(new_node = malloc(sizeof(t_node))))
-		return (NULL);
-	new_node->number = number;
-	new_node->next = NULL;
-	return (new_node);
-}
-
-void	add_node_back(t_node **node_pointer, t_node *new_node)
-{
-	t_node	*last_node;
-	
-	if(!*node_pointer)
+	amount = 0;
+	while(head_stack)
 	{
-		*node_pointer = new_node;
-		return;
+		amount++;
+		head_stack = head_stack->next;
 	}
-	last_node = search_last_node(*node_pointer);
-	last_node->next = new_node;
-}
-
-t_node	*search_last_node(t_node *list)
-{
-	if (!list)
-		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
+	return (amount);
 }

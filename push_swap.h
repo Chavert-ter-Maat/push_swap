@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 10:58:22 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/15 14:38:08 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/16 15:45:19 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct ps_list
 {
 	long long		number;
+	int				index;
 	struct ps_list	*next;
 }					t_node;
 
@@ -30,19 +31,26 @@ typedef struct	s_data
 	int		argc;
 	char	argv;
 	int		size;
-	t_node	*head;
 }			t_data;
 
-/* Error handling */
+/* Errors */
 void		sign_check(char **argv);
+int			string_search(char *string);
 void		lenght_check(long long int number);
 void		check_double(char **argv);
 
-/* Utility functions */
+/* Parsing */
+t_node		*parse_stack(int argc, char **argv);
 long long	ps_atoll(const char *argv);
-int			string_search(char *string);
-t_node		*new_node(long long number);
+t_node		*new_node(long long number, int index);
 void		add_node_back(t_node **node_pointer, t_node *new_node);
 t_node		*search_last_node(t_node *list);
+
+/*Utilities*/
+void	print_stack(t_node *head_stack, char stack_a_b);
+int		stack_size(t_node *head_stack);
+
+// void	swap(t_node	**head_stack, char stack_a_b);
+void	swap(t_node **head_stack, char c);
 
 #endif

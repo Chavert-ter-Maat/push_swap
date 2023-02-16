@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   validations.c                                      :+:    :+:            */
+/*   errors.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 14:47:58 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/15 11:55:19 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/16 11:49:50 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 void	sign_check(char **argv)
 {
