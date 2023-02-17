@@ -6,15 +6,15 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/16 10:54:42 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/16 16:06:19 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/17 11:13:18 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_node *head_stack, char stack_a_b)
+void	print_stack(t_node *head_stack, char a_b)
 {
-	if (stack_a_b == 'a')
+	if (a_b == 'a')
 		ft_printf("------------ stack a ------------\n");
 	else
 		ft_printf("------------ stack b ------------\n");

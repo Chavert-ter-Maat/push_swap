@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 14:48:51 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/16 15:40:04 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/17 15:18:26 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,13 @@ void	add_node_back(t_node **node_pointer, t_node *new_node)
 	last_node->next = new_node;
 }
 
-t_node	*search_last_node(t_node *list)
+t_node	*search_last_node(t_node *pointer_node)
 {
-	if (!list)
+	if (!pointer_node)
 		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
+	while (pointer_node->next)
+		pointer_node = pointer_node->next;
+	return (pointer_node);
 }
 
 // void	free_stack(t_node *head_stack)

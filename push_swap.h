@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 10:58:22 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/16 15:45:19 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/17 11:59:24 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,15 @@ t_node		*parse_stack(int argc, char **argv);
 long long	ps_atoll(const char *argv);
 t_node		*new_node(long long number, int index);
 void		add_node_back(t_node **node_pointer, t_node *new_node);
-t_node		*search_last_node(t_node *list);
+t_node		*search_last_node(t_node *pointer_stack);
 
-/*Utilities*/
-void	print_stack(t_node *head_stack, char stack_a_b);
+/*Utilities */
+void	print_stack(t_node *head_stack, char a_b);
 int		stack_size(t_node *head_stack);
 
-// void	swap(t_node	**head_stack, char stack_a_b);
-void	swap(t_node **head_stack, char c);
+/*Operations */
+void	swap_node(t_node **head_stack, char stack_a_b);
+void	push_node(t_node **head_stack_one, t_node **head_stack_two, char a_b);
+void	rotate_node(t_node **head_stack, char a_b);
 
 #endif

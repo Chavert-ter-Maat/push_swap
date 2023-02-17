@@ -6,14 +6,14 @@
 #    By: chaverttermaat <chaverttermaat@student.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/07 10:49:31 by chavertterm   #+#    #+#                  #
-#    Updated: 2023/02/16 14:42:09 by cter-maa      ########   odam.nl          #
+#    Updated: 2023/02/17 15:13:28 by cter-maa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # VARIABLES
 NAME 	= push_swap
 CC 		= gcc
-CFLAGS 	= -Wall -Wextra -Werror -g
+CFLAGS 	= -Wall -Wextra -Werror
 RM 		= rm -f
 SANITIZE = -fsanitize=address -g
 
@@ -28,6 +28,8 @@ SRC =	errors.c \
 		parsing.c \
 		utilities.c \
 		swap.c \
+		push.c \
+		rotate.c \
 		main.c
 
 # OBJECTS
@@ -48,7 +50,7 @@ WHITE 		= \033[0;97m
 all: $(NAME)
 	 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(SANITIZE) $(INCLUDES) $(PRINTF) -o $(NAME) 
+	$(CC) $(OBJ) $(INCLUDES) $(PRINTF) -o $(NAME) 
 	@echo "$(GREEN) push_swap compiled $(DEF_COLOR)"
 	 
 clean:
