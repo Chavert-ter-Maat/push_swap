@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 12:59:57 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/17 11:13:34 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:02:42 by chavertterm   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,15 @@
 
 void	push_node(t_node **head_stack_one, t_node **head_stack_two, char a_b)
 {
-	t_node	*temp_b;
 	t_node	*temp_b_next;
 	
 	if (!(*head_stack_two))
 		return ;
-	temp_b = *head_stack_two;
 	temp_b_next = (*head_stack_two)->next;
 	(*head_stack_two)->next = *head_stack_one;
 	*head_stack_one = *head_stack_two;
 	(*head_stack_two) = temp_b_next;
-	ft_printf("\noperation: p%c\n", a_b);
+	printf("\noperation: p%c\n", a_b);
 }
 
 

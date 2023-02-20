@@ -6,7 +6,7 @@
 #    By: chaverttermaat <chaverttermaat@student.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/07 10:49:31 by chavertterm   #+#    #+#                  #
-#    Updated: 2023/02/17 15:13:28 by cter-maa      ########   odam.nl          #
+#    Updated: 2023/02/20 17:07:11 by chavertterm   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SANITIZE = -fsanitize=address -g
 INCLUDES	= -I ./ft_printf 
 
 # LIBS
-PRINTF = ./ft_printf/libftprintf.a
+//PRINTF = ./ft_ft_printf/libftft_printf.a
 
 # SOURCES
 SRC =	errors.c \
@@ -46,11 +46,16 @@ MAGENTA		= \033[0;95m
 CYAN 		= \033[0;96m
 WHITE 		= \033[0;97m
 
+
+
+
 # RULES
 all: $(NAME)
+
+make comp: all clean
 	 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) $(INCLUDES) $(PRINTF) -o $(NAME) 
+$(NAME): $(OBJ) #$(PRINTF)
+	$(CC) $(OBJ) $(INCLUDES) -o $(NAME) 
 	@echo "$(GREEN) push_swap compiled $(DEF_COLOR)"
 	 
 clean:

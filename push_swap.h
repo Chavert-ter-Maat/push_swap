@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 10:58:22 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/17 11:59:24 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:28:06 by chavertterm   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <limits.h>
-#include "./ft_printf/ft_printf.h"
+//#include "./ft_printf/libftprintf.h"
 
 typedef struct ps_list
 {
@@ -54,5 +54,6 @@ int		stack_size(t_node *head_stack);
 void	swap_node(t_node **head_stack, char stack_a_b);
 void	push_node(t_node **head_stack_one, t_node **head_stack_two, char a_b);
 void	rotate_node(t_node **head_stack, char a_b);
+void	reverse_rotate_node(t_node **head_stack, char a_b);
 
 #endif

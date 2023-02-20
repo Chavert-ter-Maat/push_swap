@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 10:46:27 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/17 15:24:12 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/20 18:20:43 by chavertterm   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,16 @@ int	main(int argc, char **argv)
 	
 	/*parse to stack a*/
 	head_stack_a = parse_stack(argc, argv);
-	printf("dsf%p\n", head_stack_a);
 	head_stack_b = parse_stack(argc, argv);
 	
-	/*print to check*/
-	swap_node(&head_stack_a, 'a');
+	/*operations*/
+	//swap_node(&head_stack_a, 'a');
 	//push_node(&head_stack_a, &head_stack_b, 'a');
 	//rotate_node(&head_stack_a, 'a');
+	reverse_rotate_node(&head_stack_a, 'a');
+
+	/*print stacks*/
 	print_stack(head_stack_a, 'a');
 	print_stack(head_stack_b, 'b');
-	system("leaks push_swap");
 	return (0);
 }

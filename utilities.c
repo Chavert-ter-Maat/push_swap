@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/16 10:54:42 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/17 11:13:18 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:03:06 by chavertterm   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	print_stack(t_node *head_stack, char a_b)
 {
 	if (a_b == 'a')
-		ft_printf("------------ stack a ------------\n");
+		printf("------------ stack a ------------\n");
 	else
-		ft_printf("------------ stack b ------------\n");
+		printf("------------ stack b ------------\n");
 	while (head_stack)
 	{
 		printf("(index = %i) ",head_stack->index);
 		printf("(%lli = number)\n",head_stack->number);
 		head_stack = head_stack->next;
 	}
-	ft_printf("---------------------------------\n\n");
+	printf("---------------------------------\n\n");
 }
 
 int	stack_size(t_node *head_stack)

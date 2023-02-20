@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 12:59:57 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/17 14:37:38 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:02:56 by chavertterm   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	swap_node(t_node **head_stack, char a_b)
 	(*head_stack)->next = (*head_stack)->next->next;
 	temp_second_node->next = (*head_stack);
 	(*head_stack) = temp_second_node;
-	ft_printf("\noperation: s%c\n", a_b);
+	printf("\noperation: s%c\n", a_b);
 }
 
 

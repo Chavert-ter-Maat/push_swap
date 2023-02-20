@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/21 15:59:41 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/13 11:02:00 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:01:03 by chavertterm   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int	ft_putx(unsigned int x, const char format)
 
 /*int	main(void)
  {
- 	printf("\x%i = ft\x", ft_putx(-5, 'X'));
- 	printf("\n%i = original\n", printf("%X", -5));
+ 	ft_printf("\x%i = ft\x", ft_putx(-5, 'X'));
+ 	ft_printf("\n%i = original\n", ft_printf("%X", -5));
  }*/

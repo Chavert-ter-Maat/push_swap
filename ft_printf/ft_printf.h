@@ -6,13 +6,13 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/17 12:31:46 by chavertterm   #+#    #+#                 */
-/*   Updated: 2022/11/29 13:36:07 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:01:03 by chavertterm   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // DEFINE
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef ft_printf_H
+# define ft_printf_H
 
 // INCLUDES
 # include <stdio.h>
