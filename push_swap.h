@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 10:58:22 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/20 17:28:06 by chavertterm   ########   odam.nl         */
+/*   Updated: 2023/02/23 17:51:57 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <limits.h>
+#include <stdbool.h>
 //#include "./ft_printf/libftprintf.h"
 
 typedef struct ps_list
@@ -47,13 +48,16 @@ void		add_node_back(t_node **node_pointer, t_node *new_node);
 t_node		*search_last_node(t_node *pointer_stack);
 
 /*Utilities */
-void	print_stack(t_node *head_stack, char a_b);
-int		stack_size(t_node *head_stack);
+void		print_stack(t_node *head_stack, char a_b);
+int			stack_size(t_node *head_stack);
 
 /*Operations */
-void	swap_node(t_node **head_stack, char stack_a_b);
-void	push_node(t_node **head_stack_one, t_node **head_stack_two, char a_b);
-void	rotate_node(t_node **head_stack, char a_b);
-void	reverse_rotate_node(t_node **head_stack, char a_b);
+void		swap_node(t_node **head_stack, char stack_a_b);
+void		push_node(t_node **head_stack_one, t_node **head_stack_two, char a_b);
+void		rotate_node(t_node **head_stack, char a_b);
+void		reverse_rotate_node(t_node **head_stack, char a_b);
 
+/*sorting*/
+int			check_sorted(t_node *head_stack_a);
+void		simple_sort(t_node **head_stack_a);
 #endif

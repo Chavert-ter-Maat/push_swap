@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/16 10:54:42 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/20 17:03:06 by chavertterm   ########   odam.nl         */
+/*   Updated: 2023/02/23 13:24:14 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	stack_size(t_node *head_stack)
 	int		amount;
 
 	amount = 0;
-	while(head_stack)
+	while (head_stack)
 	{
 		amount++;
 		head_stack = head_stack->next;

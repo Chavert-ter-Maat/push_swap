@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/15 12:59:57 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/20 17:02:42 by chavertterm   ########   odam.nl         */
+/*   Updated: 2023/02/23 13:40:05 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,3 @@ void	push_node(t_node **head_stack_one, t_node **head_stack_two, char a_b)
 	(*head_stack_two) = temp_b_next;
 	printf("\noperation: p%c\n", a_b);
 }
-
-
-// switches the first of a&b
-// void	push(t_node **head_stack_one, t_node **head_stack_two, char stack_a_b)
-// {
-// 	long long	temp;
-	
-// 	if (!(*head_stack_two))
-// 		return ;
-// 	temp = (*head_stack_one)->number;
-// 	(*head_stack_one)->number = (*head_stack_two)->number;
-// 	(*head_stack_two)->number = temp;
-// 	ft_printf("\noperation: p%c\n", stack_a_b);
-// }

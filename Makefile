@@ -6,7 +6,7 @@
 #    By: chaverttermaat <chaverttermaat@student.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/07 10:49:31 by chavertterm   #+#    #+#                  #
-#    Updated: 2023/02/20 17:07:11 by chavertterm   ########   odam.nl          #
+#    Updated: 2023/02/23 17:22:29 by cter-maa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,10 @@ CFLAGS 	= -Wall -Wextra -Werror
 RM 		= rm -f
 SANITIZE = -fsanitize=address -g
 
+
 # INCLUDES
 INCLUDES	= -I ./ft_printf 
+
 
 # LIBS
 //PRINTF = ./ft_ft_printf/libftft_printf.a
@@ -30,7 +32,9 @@ SRC =	errors.c \
 		swap.c \
 		push.c \
 		rotate.c \
+		sorting.c \
 		main.c
+
 
 # OBJECTS
 OBJ			= $(SRC:.c=.o)
@@ -47,15 +51,13 @@ CYAN 		= \033[0;96m
 WHITE 		= \033[0;97m
 
 
-
-
 # RULES
 all: $(NAME)
 
 make comp: all clean
 	 
 $(NAME): $(OBJ) #$(PRINTF)
-	$(CC) $(OBJ) $(INCLUDES) -o $(NAME) 
+	$(CC) $(OBJ) $(INCLUDES) $(SANITIZE) -o $(NAME) 
 	@echo "$(GREEN) push_swap compiled $(DEF_COLOR)"
 	 
 clean:

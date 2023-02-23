@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 10:46:27 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/20 18:20:43 by chavertterm   ########   odam.nl         */
+/*   Updated: 2023/02/23 16:33:38 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,16 @@ int	main(int argc, char **argv)
 	//swap_node(&head_stack_a, 'a');
 	//push_node(&head_stack_a, &head_stack_b, 'a');
 	//rotate_node(&head_stack_a, 'a');
-	reverse_rotate_node(&head_stack_a, 'a');
+	//reverse_rotate_node(&head_stack_a, 'a');
 
+	/*sorting*/
+	simple_sort(&head_stack_a);
 	/*print stacks*/
 	print_stack(head_stack_a, 'a');
 	print_stack(head_stack_b, 'b');
+
+	/*free stacks*/
+	// void	free_stack(&head_stack_a)
+	// void	free_stack(&head_stack_b)
 	return (0);
 }
