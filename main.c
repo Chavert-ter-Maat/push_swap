@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/07 10:46:27 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/23 16:33:38 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/03/01 16:30:34 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,18 @@
 
 int	main(int argc, char **argv)
 {
-	t_node		*head_stack_a;
-	t_node		*head_stack_b;
-	
-	/*check for errors in input*/
-	check_double(argv);
-	sign_check(argv);
-	
-	/*parse to stack a*/
+	t_node	*head_stack_a;
+
+	check_double (argv);
+	sign_check (argv);
 	head_stack_a = parse_stack(argc, argv);
-	head_stack_b = parse_stack(argc, argv);
-	
-	/*operations*/
-	//swap_node(&head_stack_a, 'a');
-	//push_node(&head_stack_a, &head_stack_b, 'a');
-	//rotate_node(&head_stack_a, 'a');
-	//reverse_rotate_node(&head_stack_a, 'a');
-
-	/*sorting*/
-	simple_sort(&head_stack_a);
-	/*print stacks*/
-	print_stack(head_stack_a, 'a');
-	print_stack(head_stack_b, 'b');
-
-	/*free stacks*/
-	// void	free_stack(&head_stack_a)
-	// void	free_stack(&head_stack_b)
+	if (argc <= 7)
+		short_sort (&head_stack_a);
+	if (argc >= 8)
+	{
+		index_sort (&head_stack_a);
+		radix_sort (& head_stack_a);
+	}
+	free_stack (&head_stack_a);
 	return (0);
 }

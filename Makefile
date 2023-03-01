@@ -6,7 +6,7 @@
 #    By: chaverttermaat <chaverttermaat@student.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/07 10:49:31 by chavertterm   #+#    #+#                  #
-#    Updated: 2023/02/23 17:22:29 by cter-maa      ########   odam.nl          #
+#    Updated: 2023/03/01 15:43:51 by cter-maa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,23 +15,19 @@ NAME 	= push_swap
 CC 		= gcc
 CFLAGS 	= -Wall -Wextra -Werror
 RM 		= rm -f
-SANITIZE = -fsanitize=address -g
-
+#SANITIZE = -fsanitize=address
 
 # INCLUDES
 INCLUDES	= -I ./ft_printf 
 
-
 # LIBS
-//PRINTF = ./ft_ft_printf/libftft_printf.a
+PRINTF = ./ft_printf/libftprintf.a
 
 # SOURCES
 SRC =	errors.c \
 		parsing.c \
 		utilities.c \
-		swap.c \
-		push.c \
-		rotate.c \
+		operations.c \
 		sorting.c \
 		main.c
 
@@ -56,8 +52,8 @@ all: $(NAME)
 
 make comp: all clean
 	 
-$(NAME): $(OBJ) #$(PRINTF)
-	$(CC) $(OBJ) $(INCLUDES) $(SANITIZE) -o $(NAME) 
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) $(INCLUDES) $(PRINTF) $(CFLAGS) $(SANITIZE) -o $(NAME) 
 	@echo "$(GREEN) push_swap compiled $(DEF_COLOR)"
 	 
 clean:

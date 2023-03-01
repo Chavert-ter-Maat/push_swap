@@ -6,28 +6,24 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/16 10:54:42 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/23 13:24:14 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/03/01 16:05:28 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_node *head_stack, char a_b)
+void	print_stack(t_node *head_stack)
 {
-	if (a_b == 'a')
-		printf("------------ stack a ------------\n");
-	else
-		printf("------------ stack b ------------\n");
+	ft_printf("\n");
 	while (head_stack)
 	{
-		printf("(index = %i) ",head_stack->index);
-		printf("(%lli = number)\n",head_stack->number);
+		ft_printf ("number = %i\n", head_stack->number);
 		head_stack = head_stack->next;
 	}
-	printf("---------------------------------\n\n");
+	ft_printf("\n");
 }
 
-int	stack_size(t_node *head_stack)
+int	count_nodes(t_node *head_stack)
 {
 	int		amount;
 
@@ -38,4 +34,27 @@ int	stack_size(t_node *head_stack)
 		head_stack = head_stack->next;
 	}
 	return (amount);
+}
+
+void	free_stack(t_node **head_stack)
+{
+	t_node	*temp;
+
+	if (!head_stack)
+		return ;
+	while (*head_stack)
+	{
+		temp = (*head_stack)->next;
+		free(*head_stack);
+		*head_stack = temp;
+	}
+}
+
+t_node	*search_last(t_node *pointer_node)
+{
+	if (!pointer_node)
+		return (NULL);
+	while (pointer_node->next)
+		pointer_node = pointer_node->next;
+	return (pointer_node);
 }

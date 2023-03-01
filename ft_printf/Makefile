@@ -6,12 +6,12 @@
 #    By: chaverttermaat <chaverttermaat@student.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/11/17 11:27:38 by chavertterm   #+#    #+#                  #
-#    Updated: 2023/02/20 17:01:03 by chavertterm   ########   odam.nl          #
+#    Updated: 2023/02/13 11:13:21 by cter-maa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # VARIABLES
-NAME		= libftft_printf.a
+NAME		= libftprintf.a
 CC 			= cc
 LIBFT		= libft
 CFLAGS		= -Wall -Wextra -Werror
@@ -48,7 +48,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 ##	make -C libft
-##	mv libft/libft.a ./libftft_printf.a
+##	mv libft/libft.a ./libftprintf.a
 	ar -crs $(NAME) $(OBJ)
 	@echo "$(GREEN) ft_printf compiled $(DEF_COLOR)"
 

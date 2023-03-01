@@ -6,40 +6,38 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 14:47:58 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/02/20 17:01:47 by chavertterm   ########   odam.nl         */
+/*   Updated: 2023/03/01 11:22:15 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void	sign_check(char **argv)
+void	sign_check(char **a)
 {
-	int index1;
-	int	index2;
-	
-	index1 = 1;
-	while(argv[index1])
+	int	i;
+	int	j;
+
+	i = 1;
+	while (a[i])
 	{
-		index2 = 0;
-		while(argv[index1][index2])
+		j = 0;
+		while (a[i][j])
 		{
-			if (((argv[index1][index2] > '0') && (argv[index1][index2] < '9')) ||
-			(argv[index1][index2] == '-'))
-				index2++;
+			if (((a[i][j] >= '0') && (a[i][j] <= '9')) || (a[i][j] == '-'))
+				j++;
 			else
 			{
 				printf("Error\n");
 				exit(EXIT_FAILURE);
 			}
 		}
-		index2 = 0;
-		if ((argv[index1][index2] == '-') && (string_search(argv[index1]) == 1))
+		j = 0;
+		if (string_search(a[i]) == 1)
 		{
-			printf("Error\n");
+			printf ("Error\n");
 			exit(EXIT_FAILURE);
 		}
-		index1++;
+		i++;
 	}
 }
 
@@ -53,7 +51,7 @@ int	string_search(char *string)
 		if (string[index] == '\0')
 			return (0);
 		index++;
-	}	
+	}
 	return (1);
 }
 
@@ -61,29 +59,29 @@ void	lenght_check(long long int number)
 {
 	if (number > INT_MAX || number < INT_MIN)
 	{
-		printf("Error\n");
-		exit(EXIT_FAILURE);
+		printf ("Error\n");
+		exit (EXIT_FAILURE);
 	}
 }
 
 void	check_double(char **argv)
 {
-	int	index_argv;
-	int	index_argv2;
-	
-	index_argv = 1;
-	while (argv[index_argv])
+	int	i_argv;
+	int	i_argv2;
+
+	i_argv = 1;
+	while (argv[i_argv])
 	{
-		index_argv2 = index_argv + 1;
-		while(argv[index_argv2])
+		i_argv2 = i_argv + 1;
+		while (argv[i_argv2])
 		{
-			if (ps_atoll(argv[index_argv]) == ps_atoll(argv[index_argv2]))
-				{
-					printf("Error\n");
-					exit(EXIT_FAILURE);
-				}
-			index_argv2++;
+			if (string_to_llong(argv[i_argv]) == string_to_llong(argv[i_argv2]))
+			{
+				printf ("Error\n");
+				exit (EXIT_FAILURE);
+			}
+			i_argv2++;
 		}
-		index_argv++;
+		i_argv++;
 	}
 }
