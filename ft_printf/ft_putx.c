@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/21 15:59:41 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/13 11:02:00 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/03/03 10:01:24 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*ft_itoah(unsigned int x, const char format)
 	string_lenght = ft_getlen(x);
 	string = malloc((string_lenght + 1) * sizeof(char));
 	if (!string)
-		return (NULL);
+		return (0);
 	string[string_lenght] = '\0';
 	if (x == 0)
 		string[0] = '0';

@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 15:20:31 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/13 10:56:25 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/03/03 10:05:27 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	*ft_itoah(uintptr_t x)
 	string_lenght = ft_getlen(x);
 	string = malloc((string_lenght + 3) * sizeof(char));
 	if (!string)
-		return (NULL);
+		return (0);
 	string[0] = '0';
 	string[1] = 'x';
 	string[string_lenght + 2] = '\0';
@@ -70,9 +70,9 @@ int	ft_putp(uintptr_t pointer)
 	int		lenght;
 
 	string = ft_itoah(pointer);
-	lenght = ft_strlen(string);
 	if (!string)
 		return (-1);
+	lenght = ft_strlen(string);
 	if (ft_printstr(string) == -1)
 		return (free(string), -1);
 	free (string);

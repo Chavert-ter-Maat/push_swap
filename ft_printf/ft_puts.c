@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/24 14:30:41 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/02/13 10:57:12 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/03/03 10:01:07 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_puts(char *string)
 	int	index;
 
 	index = 0;
-	if (string == NULL)
+	if (string == 0)
 	{
 		index = ft_printstr("(null)");
 		if (index != 6)

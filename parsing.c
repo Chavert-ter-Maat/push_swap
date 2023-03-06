@@ -6,7 +6,7 @@
 /*   By: chaverttermaat <chaverttermaat@student.      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/08 14:48:51 by chavertterm   #+#    #+#                 */
-/*   Updated: 2023/03/01 16:24:00 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/03/03 10:27:56 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ t_node	*new_node(long long number, int index)
 
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
-		return (NULL);
+	{
+		ft_printf ("Malloc failed"),
+		exit (EXIT_FAILURE);
+	}
 	new_node->number = number;
 	new_node->index = index;
 	new_node->next = NULL;

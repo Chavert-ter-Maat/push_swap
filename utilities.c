@@ -6,7 +6,7 @@
 /*   By: cter-maa <cter-maa@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/16 10:54:42 by cter-maa      #+#    #+#                 */
-/*   Updated: 2023/03/01 16:05:28 by cter-maa      ########   odam.nl         */
+/*   Updated: 2023/03/06 10:34:12 by cter-maa      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,37 +23,37 @@ void	print_stack(t_node *head_stack)
 	ft_printf("\n");
 }
 
-int	count_nodes(t_node *head_stack)
+int	count_nodes(t_node *stack)
 {
 	int		amount;
 
 	amount = 0;
-	while (head_stack)
+	while (stack)
 	{
 		amount++;
-		head_stack = head_stack->next;
+		stack = stack->next;
 	}
 	return (amount);
 }
 
-void	free_stack(t_node **head_stack)
+void	free_stack(t_node **stack)
 {
 	t_node	*temp;
 
-	if (!head_stack)
+	if (!stack)
 		return ;
-	while (*head_stack)
+	while (*stack)
 	{
-		temp = (*head_stack)->next;
-		free(*head_stack);
-		*head_stack = temp;
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
 	}
 }
 
 t_node	*search_last(t_node *pointer_node)
 {
 	if (!pointer_node)
-		return (NULL);
+		return (0);
 	while (pointer_node->next)
 		pointer_node = pointer_node->next;
 	return (pointer_node);
